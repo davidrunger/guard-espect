@@ -57,7 +57,7 @@ RSpec.describe Guard::Espect::RSpecProcess do
 
       it "fails" do
         expect { subject }.
-          to raise_error(Guard::RSpec::RSpecProcess::Failure, /Failed: /)
+          to raise_error(Guard::Espect::RSpecProcess::Failure, /Failed: /)
       end
     end
 
