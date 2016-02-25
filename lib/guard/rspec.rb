@@ -7,14 +7,14 @@ require "guard/rspec/runner"
 # NOTE: To avoid 'superclass mismatch for class RSpec' errors,
 # every file has to have
 #
-#   class RSpec < Plugin
+#   class Espect < Plugin
 #
 # and not just
 #
 #   class RSpec
 
 module Guard
-  class RSpec < Plugin
+  class Espect < Plugin
     attr_accessor :options, :runner
 
     def initialize(options = {})
@@ -25,7 +25,7 @@ module Guard
     end
 
     def start
-      Compat::UI.info "Guard::RSpec is running"
+      Compat::UI.info "Guard::Espect is running"
       run_all if options[:all_on_start]
     end
 

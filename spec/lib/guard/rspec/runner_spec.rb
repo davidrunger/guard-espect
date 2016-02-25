@@ -4,27 +4,27 @@ require "launchy"
 
 require "guard/rspec/runner"
 
-RSpec.describe Guard::RSpec::Runner do
+RSpec.describe Guard::Espect::Runner do
   let(:options) { { cmd: "rspec" } }
-  let(:runner) { Guard::RSpec::Runner.new(options) }
-  let(:inspector) { instance_double(Guard::RSpec::Inspectors::SimpleInspector) }
-  let(:notifier) { instance_double(Guard::RSpec::Notifier) }
-  let(:results) { instance_double(Guard::RSpec::Results) }
-  let(:process) { instance_double(Guard::RSpec::RSpecProcess) }
+  let(:runner) { Guard::Espect::Runner.new(options) }
+  let(:inspector) { instance_double(Guard::Espect::Inspectors::SimpleInspector) }
+  let(:notifier) { instance_double(Guard::Espect::Notifier) }
+  let(:results) { instance_double(Guard::Espect::Results) }
+  let(:process) { instance_double(Guard::Espect::RSpecProcess) }
 
   before do
     allow(Guard::Compat::UI).to receive(:info)
     allow(Guard::Compat::UI).to receive(:error)
-    allow(Guard::RSpec::Inspectors::Factory).to receive(:create) { inspector }
-    allow(Guard::RSpec::Notifier).to receive(:new) { notifier }
-    allow(Guard::RSpec::Command).to receive(:new) { "rspec" }
+    allow(Guard::Espect::Inspectors::Factory).to receive(:create) { inspector }
+    allow(Guard::Espect::Notifier).to receive(:new) { notifier }
+    allow(Guard::Espect::Command).to receive(:new) { "rspec" }
     allow(notifier).to receive(:notify)
     allow(notifier).to receive(:notify_failure)
 
     allow(results).to receive(:summary).and_return("Summary")
     allow(results).to receive(:failed_paths).and_return([])
 
-    allow(Guard::RSpec::RSpecProcess).to receive(:new).and_return(process)
+    allow(Guard::Espect::RSpecProcess).to receive(:new).and_return(process)
     allow(process).to receive(:all_green?).and_return(true)
     allow(process).to receive(:results).and_return(results)
   end
@@ -34,13 +34,13 @@ RSpec.describe Guard::RSpec::Runner do
       let(:options) { { foo: :bar } }
 
       it "instanciates inspector via Inspectors::Factory with custom options" do
-        expect(Guard::RSpec::Inspectors::Factory).
+        expect(Guard::Espect::Inspectors::Factory).
           to receive(:create).with(foo: :bar)
         runner
       end
 
       it "instanciates notifier with custom options" do
-        expect(Guard::RSpec::Notifier).to receive(:new).with(foo: :bar)
+        expect(Guard::Espect::Notifier).to receive(:new).with(foo: :bar)
         runner
       end
     end
@@ -78,7 +78,7 @@ RSpec.describe Guard::RSpec::Runner do
     end
 
     it "builds commands with spec paths" do
-      expect(Guard::RSpec::Command).to receive(:new).
+      expect(Guard::Espect::Command).to receive(:new).
         with(%w(spec1 spec2), kind_of(Hash))
       runner.run_all
     end
@@ -109,7 +109,7 @@ RSpec.describe Guard::RSpec::Runner do
       end
 
       it "builds command with custom cmd" do
-        expect(Guard::RSpec::Command).to receive(:new).
+        expect(Guard::Espect::Command).to receive(:new).
           with(kind_of(Array), hash_including(cmd: "rspec -t ~slow"))
         runner.run_all
       end
@@ -118,14 +118,14 @@ RSpec.describe Guard::RSpec::Runner do
     context "with no cmd" do
       before do
         options[:cmd] = nil
-        allow(Guard::RSpec::Command).to receive(:new)
+        allow(Guard::Espect::Command).to receive(:new)
         allow(Guard::Compat::UI).to receive(:error).with(an_instance_of(String))
         allow(notifier).to receive(:notify_failure)
         runner.run_all
       end
 
       it "does not build" do
-        expect(Guard::RSpec::Command).to_not have_received(:new)
+        expect(Guard::Espect::Command).to_not have_received(:new)
       end
 
       it "issues a warning to the user" do
@@ -177,7 +177,7 @@ RSpec.describe Guard::RSpec::Runner do
     end
 
     it "builds commands with spec paths" do
-      expect(Guard::RSpec::Command).to receive(:new).
+      expect(Guard::Espect::Command).to receive(:new).
         with(%w(spec_path1 spec_path2), kind_of(Hash))
       runner.run(paths)
     end
@@ -216,7 +216,7 @@ RSpec.describe Guard::RSpec::Runner do
         context "when the path is relative" do
           let(:results_file) { "foobar.txt" }
           it "uses the given file" do
-            expect(Guard::RSpec::RSpecProcess).to receive(:new).
+            expect(Guard::Espect::RSpecProcess).to receive(:new).
               with(anything, results_file).and_return(process)
             runner.run(paths)
           end
@@ -225,7 +225,7 @@ RSpec.describe Guard::RSpec::Runner do
         context "when the path is absolute" do
           let(:results_file) { "/foo/foobar.txt" }
           it "uses the given path" do
-            expect(Guard::RSpec::RSpecProcess).to receive(:new).
+            expect(Guard::Espect::RSpecProcess).to receive(:new).
               with(anything, results_file).and_return(process)
             runner.run(paths)
           end
@@ -239,7 +239,7 @@ RSpec.describe Guard::RSpec::Runner do
           let(:results_file) { "foobar.txt" }
 
           it "uses a path relative to chdir" do
-            expect(Guard::RSpec::RSpecProcess).to receive(:new).
+            expect(Guard::Espect::RSpecProcess).to receive(:new).
               with(anything, "moduleA/foobar.txt").and_return(process)
             runner.run(paths)
           end
@@ -248,7 +248,7 @@ RSpec.describe Guard::RSpec::Runner do
         context "when the path is absolute" do
           let(:results_file) { "/foo/foobar.txt" }
           it "uses the full given path anyway" do
-            expect(Guard::RSpec::RSpecProcess).to receive(:new).
+            expect(Guard::Espect::RSpecProcess).to receive(:new).
               with(anything, results_file).and_return(process)
             runner.run(paths)
           end
@@ -259,7 +259,7 @@ RSpec.describe Guard::RSpec::Runner do
     context "with no custom results file" do
       let(:options) { { cmd: "rspec" } }
       it "uses the default" do
-        expect(Guard::RSpec::RSpecProcess).to receive(:new).
+        expect(Guard::Espect::RSpecProcess).to receive(:new).
           with(anything, "tmp/rspec_guard_result").and_return(process)
         runner.run(paths)
       end
@@ -293,7 +293,7 @@ RSpec.describe Guard::RSpec::Runner do
 
     it "notifies failure" do
       allow(process).to receive(:all_green?).
-        and_raise(Guard::RSpec::RSpecProcess::Failure, /Failed: /)
+        and_raise(Guard::Espect::RSpecProcess::Failure, /Failed: /)
 
       expect(notifier).to receive(:notify_failure)
       runner.run(paths)

@@ -3,7 +3,7 @@ require "ostruct"
 require "guard/rspec"
 
 module Guard
-  class RSpec < Plugin
+  class Espect < Plugin
     class Dsl
       def initialize(dsl)
         @dsl = dsl

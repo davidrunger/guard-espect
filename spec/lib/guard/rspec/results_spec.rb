@@ -2,7 +2,7 @@ require "guard/compat/test/helper"
 
 require "guard/rspec/results"
 
-RSpec.describe Guard::RSpec::Results do
+RSpec.describe Guard::Espect::Results do
   subject do
     described_class.new("foo/bar.txt")
   end
@@ -43,7 +43,7 @@ RSpec.describe Guard::RSpec::Results do
       expect do
         subject.load
       end.to raise_error(
-        Guard::RSpec::Results::InvalidData,
+        Guard::Espect::Results::InvalidData,
         "Invalid results in: foo/bar.txt, lines:\n[]\n")
     end
   end
@@ -57,7 +57,7 @@ RSpec.describe Guard::RSpec::Results do
       expect do
         subject.load
       end.to raise_error(
-        Guard::RSpec::Results::InvalidData,
+        Guard::Espect::Results::InvalidData,
         "Invalid results in: foo/bar.txt, lines:\n[\"\"]\n")
     end
   end

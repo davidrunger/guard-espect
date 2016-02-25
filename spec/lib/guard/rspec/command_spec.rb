@@ -3,10 +3,10 @@ require "launchy"
 require "guard/compat/test/helper"
 require "guard/rspec/command"
 
-RSpec.describe Guard::RSpec::Command do
+RSpec.describe Guard::Espect::Command do
   let(:options) { {} }
   let(:paths) { %w(path1 path2) }
-  let(:command) { Guard::RSpec::Command.new(paths, options) }
+  let(:command) { Guard::Espect::Command.new(paths, options) }
 
   describe ".initialize" do
     it "sets paths at the end" do

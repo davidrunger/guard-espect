@@ -2,14 +2,14 @@ require "guard/compat/test/helper"
 
 require "guard/rspec/rspec_process"
 
-RSpec.describe Guard::RSpec::RSpecProcess do
+RSpec.describe Guard::Espect::RSpecProcess do
   before do
     allow(Kernel).to receive(:spawn) do |*args|
       fail "Not stubbed: Kernel.spawn(#{args.map(&:inspect) * ','})"
     end
   end
 
-  let(:results) { instance_double(Guard::RSpec::Results) }
+  let(:results) { instance_double(Guard::Espect::Results) }
 
   let(:cmd) { "foo" }
   let(:file) { "foobar.txt" }
@@ -26,7 +26,7 @@ RSpec.describe Guard::RSpec::RSpecProcess do
     allow(Kernel).to receive(:spawn).
       with({ "GUARD_RSPEC_RESULTS_FILE" => file }, cmd).and_return(pid)
 
-    allow(Guard::RSpec::Results).to receive(:new).
+    allow(Guard::Espect::Results).to receive(:new).
       with(file).and_return(results)
   end
 
@@ -38,7 +38,7 @@ RSpec.describe Guard::RSpec::RSpecProcess do
 
     it "fails" do
       expect { subject }.
-        to raise_error(Guard::RSpec::RSpecProcess::Failure, /Failed: /)
+        to raise_error(Guard::Espect::RSpecProcess::Failure, /Failed: /)
     end
   end
 
@@ -52,12 +52,12 @@ RSpec.describe Guard::RSpec::RSpecProcess do
 
       it "fails" do
         expect { subject }.
-          to raise_error(Guard::RSpec::RSpecProcess::Failure, /Failed: /)
+          to raise_error(Guard::Espect::RSpecProcess::Failure, /Failed: /)
       end
     end
 
     context "with the failure code for normal test failures" do
-      let(:exit_code) { Guard::RSpec::Command::FAILURE_EXIT_CODE }
+      let(:exit_code) { Guard::Espect::Command::FAILURE_EXIT_CODE }
 
       it "fails" do
         expect { subject }.to_not raise_error

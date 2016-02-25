@@ -3,9 +3,9 @@ require "guard/compat/test/template"
 # Do not require to simulate Guardfile loading more accurately
 # require 'guard/rspec'
 
-RSpec.describe "Guard::RSpec" do
+RSpec.describe "Guard::Espect" do
   describe "template" do
-    subject { Guard::Compat::Test::Template.new("Guard::RSpec") }
+    subject { Guard::Compat::Test::Template.new("Guard::Espect") }
 
     it "matches spec files by default" do
       expect(subject.changed("spec/lib/foo_spec.rb")).

@@ -1,5 +1,5 @@
 module Guard
-  class RSpec < Plugin
+  class Espect < Plugin
     class Notifier
       attr_accessor :options
 

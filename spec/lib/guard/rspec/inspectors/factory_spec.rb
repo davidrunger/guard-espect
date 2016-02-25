@@ -2,8 +2,8 @@ require "guard/compat/test/helper"
 
 require "guard/rspec/inspectors/factory"
 
-RSpec.describe Guard::RSpec::Inspectors::Factory do
-  let(:factory) { Guard::RSpec::Inspectors::Factory }
+RSpec.describe Guard::Espect::Inspectors::Factory do
+  let(:factory) { Guard::Espect::Inspectors::Factory }
   let(:options) { {} }
 
   it "can not be instantiated" do
@@ -16,7 +16,7 @@ RSpec.describe Guard::RSpec::Inspectors::Factory do
     it "creates FocusedInspector instance with custom options" do
       inspector = factory.create(options)
       expect(inspector).
-        to be_an_instance_of(Guard::RSpec::Inspectors::FocusedInspector)
+        to be_an_instance_of(Guard::Espect::Inspectors::FocusedInspector)
       expect(inspector.options).to eq(options)
     end
   end
@@ -27,7 +27,7 @@ RSpec.describe Guard::RSpec::Inspectors::Factory do
     it "creates KeepingInspector instance with custom options" do
       inspector = factory.create(options)
       expect(inspector).
-        to be_an_instance_of(Guard::RSpec::Inspectors::KeepingInspector)
+        to be_an_instance_of(Guard::Espect::Inspectors::KeepingInspector)
       expect(inspector.options).to eq(options)
     end
   end
@@ -38,7 +38,7 @@ RSpec.describe Guard::RSpec::Inspectors::Factory do
     it "creates SimpleInspector instance with custom options" do
       inspector = factory.create(options)
       expect(inspector).
-        to be_an_instance_of(Guard::RSpec::Inspectors::SimpleInspector)
+        to be_an_instance_of(Guard::Espect::Inspectors::SimpleInspector)
       expect(inspector.options).to eq(options)
     end
   end

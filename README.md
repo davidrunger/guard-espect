@@ -1,8 +1,8 @@
-# Guard::RSpec
+# Guard::Espect
 
 [![Gem Version](https://badge.fury.io/rb/guard-rspec.png)](http://badge.fury.io/rb/guard-rspec) [![Build Status](https://secure.travis-ci.org/guard/guard-rspec.png?branch=master)](http://travis-ci.org/guard/guard-rspec) [![Dependency Status](https://gemnasium.com/guard/guard-rspec.png)](https://gemnasium.com/guard/guard-rspec) [![Code Climate](https://codeclimate.com/github/guard/guard-rspec.png)](https://codeclimate.com/github/guard/guard-rspec) [![Coverage Status](https://coveralls.io/repos/guard/guard-rspec/badge.png?branch=master)](https://coveralls.io/r/guard/guard-rspec)
 
-Guard::RSpec allows to automatically & intelligently launch specs when files are modified.
+Guard::Espect allows to automatically & intelligently launch specs when files are modified.
 
 * Compatible with RSpec >2.14 & 3
 * Tested against Ruby 2.2.x, JRuby and Rubinius.
@@ -27,7 +27,7 @@ Please read [Guard usage doc](https://github.com/guard/guard#readme).
 
 ## Guardfile
 
-Guard::RSpec can be adapted to all kinds of projects, some examples:
+Guard::Espect can be adapted to all kinds of projects, some examples:
 
 ### Standard RubyGem project
 
@@ -58,7 +58,7 @@ Please read [Guard doc](https://github.com/guard/guard#readme) for more informat
 
 ## Options
 
-Guard::RSpec 4.0 now uses a simpler approach with the new `cmd` option that let you precisely define which rspec command will be launched on each run. **This option is required** due to the number of different ways possible to invoke rspec, the template now includes a default that should work for most applications but may not be optimal for all. As example if you want to support Spring with a custom formatter (progress by default) use:
+Guard::Espect 4.0 now uses a simpler approach with the new `cmd` option that let you precisely define which rspec command will be launched on each run. **This option is required** due to the number of different ways possible to invoke rspec, the template now includes a default that should work for most applications but may not be optimal for all. As example if you want to support Spring with a custom formatter (progress by default) use:
 
 ``` ruby
 guard :rspec, cmd: 'spring rspec -f doc' do
@@ -117,7 +117,7 @@ Also, if you get warnings about empty environment, be sure to [read about this w
 
 ### Using parallel_tests
 
-parallel_tests has a `-o` option for passing RSpec options, and here's a trick to make it work with Guard::RSpec:
+parallel_tests has a `-o` option for passing RSpec options, and here's a trick to make it work with Guard::Espect:
 
 ```ruby
 rspec_options = {

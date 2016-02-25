@@ -4,7 +4,7 @@ require "lib/guard/rspec/inspectors/shared_examples"
 
 require "guard/rspec/inspectors/focused_inspector"
 
-klass = Guard::RSpec::Inspectors::FocusedInspector
+klass = Guard::Espect::Inspectors::FocusedInspector
 
 RSpec.describe klass do
   include_examples "inspector", klass

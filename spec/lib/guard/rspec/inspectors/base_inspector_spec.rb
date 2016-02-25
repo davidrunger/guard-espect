@@ -2,9 +2,9 @@ require "guard/compat/test/helper"
 
 require "guard/rspec/inspectors/base_inspector"
 
-RSpec.describe Guard::RSpec::Inspectors::BaseInspector do
+RSpec.describe Guard::Espect::Inspectors::BaseInspector do
   let(:options) { { custom: "value", spec_paths: %w(myspec) } }
-  let(:inspector) { Guard::RSpec::Inspectors::BaseInspector.new(options) }
+  let(:inspector) { Guard::Espect::Inspectors::BaseInspector.new(options) }
   let(:paths) { %w(spec/foo_spec.rb spec/bar_spec.rb) }
 
   describe ".initialize" do
@@ -21,7 +21,7 @@ RSpec.describe Guard::RSpec::Inspectors::BaseInspector do
     end
 
     context "specific inspector" do
-      class FooInspector < Guard::RSpec::Inspectors::BaseInspector
+      class FooInspector < Guard::Espect::Inspectors::BaseInspector
         def paths(paths)
           _clean(paths)
         end

@@ -5,11 +5,11 @@ require "guard/rspec/version"
 
 Gem::Specification.new do |s|
   s.name        = "guard-rspec"
-  s.version     = Guard::RSpecVersion::VERSION
+  s.version     = Guard::EspectVersion::VERSION
   s.author      = "Thibaud Guillaume-Gentil"
   s.email       = "thibaud@thibaud.gg"
   s.summary     = "Guard gem for RSpec"
-  s.description = "Guard::RSpec automatically run your specs" +
+  s.description = "Guard::Espect automatically run your specs" +
                   " (much like autotest)."
 
   s.homepage    = "https://github.com/guard/guard-rspec"

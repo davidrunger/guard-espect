@@ -1,5 +1,5 @@
 module Guard
-  class RSpec < Plugin
+  class Espect < Plugin
     class Deprecator
       attr_accessor :options
 
@@ -77,7 +77,7 @@ module Guard
       end
 
       def _deprecated(message)
-        Compat::UI.warning %(Guard::RSpec DEPRECATION WARNING: #{message})
+        Compat::UI.warning %(Guard::Espect DEPRECATION WARNING: #{message})
       end
     end
   end

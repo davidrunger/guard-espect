@@ -1,7 +1,7 @@
 group :specs, halt_on_fail: true do
   guard :rspec, cmd: "bundle exec rspec" do
     require "guard/rspec/dsl"
-    dsl = Guard::RSpec::Dsl.new(self)
+    dsl = Guard::Espect::Dsl.new(self)
 
     # RSpec files
     rspec = dsl.rspec

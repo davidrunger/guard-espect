@@ -1,4 +1,4 @@
-Contribute to Guard::RSpec
+Contribute to Guard::Espect
 ==========================
 
 File an issue
@@ -9,7 +9,7 @@ You can report bugs and feature requests to [GitHub Issues](https://github.com/g
 **Please don't ask question in the issue tracker**, instead ask them on at Stack Overflow and use the
 [guard](http://stackoverflow.com/questions/tagged/guard) tag and/or [guard-rspec](http://stackoverflow.com/questions/tagged/guard-rspec).
 
-Try to figure out where the issue belongs to: Is it an issue with Guard::RSpec itself or with Guard?
+Try to figure out where the issue belongs to: Is it an issue with Guard::Espect itself or with Guard?
 
 When you file a bug, please try to follow these simple rules if applicable:
 

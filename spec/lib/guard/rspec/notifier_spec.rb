@@ -2,9 +2,9 @@ require "guard/compat/test/helper"
 
 require "guard/rspec/notifier"
 
-RSpec.describe Guard::RSpec::Notifier do
+RSpec.describe Guard::Espect::Notifier do
   let(:options) { { notification: true, title: "RSpec results" } }
-  let(:notifier) { Guard::RSpec::Notifier.new(options) }
+  let(:notifier) { Guard::Espect::Notifier.new(options) }
 
   def expect_notification(message, image, priority, title = "RSpec results")
     expect(Guard::Compat::UI).to receive(:notify).

@@ -1,36 +1,36 @@
 require "guard/compat/test/helper"
 require "guard/rspec"
 
-RSpec.describe Guard::RSpec do
-  let(:default_options) { Guard::RSpec::Options::DEFAULTS }
+RSpec.describe Guard::Espect do
+  let(:default_options) { Guard::Espect::Options::DEFAULTS }
   let(:options) { {} }
-  let(:plugin) { Guard::RSpec.new(options) }
-  let(:runner) { instance_double(Guard::RSpec::Runner) }
+  let(:plugin) { Guard::Espect.new(options) }
+  let(:runner) { instance_double(Guard::Espect::Runner) }
 
   before do
     allow(Guard::Compat::UI).to receive(:info)
-    allow(Guard::RSpec::Deprecator).to receive(:warns_about_deprecated_options)
-    allow(Guard::RSpec::Runner).to receive(:new) { runner }
+    allow(Guard::Espect::Deprecator).to receive(:warns_about_deprecated_options)
+    allow(Guard::Espect::Runner).to receive(:new) { runner }
   end
 
   describe ".initialize" do
     it "instanciates with default and custom options" do
-      guard_rspec = Guard::RSpec.new(foo: :bar)
+      guard_rspec = Guard::Espect.new(foo: :bar)
       expect(guard_rspec.options).to eq(default_options.merge(foo: :bar))
     end
 
     it "instanciates Runner with all default and custom options" do
-      expect(Guard::RSpec::Runner).to receive(:new).
+      expect(Guard::Espect::Runner).to receive(:new).
         with(default_options.merge(foo: :bar))
-      Guard::RSpec.new(foo: :bar)
+      Guard::Espect.new(foo: :bar)
     end
 
     it "warns deprecated options" do
-      expect(Guard::RSpec::Deprecator).
+      expect(Guard::Espect::Deprecator).
         to receive(:warns_about_deprecated_options).
         with(default_options.merge(foo: :bar))
 
-      Guard::RSpec.new(foo: :bar)
+      Guard::Espect.new(foo: :bar)
     end
   end
 

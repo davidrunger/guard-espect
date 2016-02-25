@@ -134,8 +134,8 @@ module Guard
     def _results_file
       path = ENV["GUARD_RSPEC_RESULTS_FILE"]
       if path.nil?
-        STDERR.puts "Guard::RSpec: Warning: #{NO_ENV_WARNING_MSG}\n" \
-          "Guard::RSpec: Warning: #{NO_RESULTS_VALUE_MSG}"
+        STDERR.puts "Guard::Espect: Warning: #{NO_ENV_WARNING_MSG}\n" \
+          "Guard::Espect: Warning: #{NO_RESULTS_VALUE_MSG}"
         path = RSpecDefaults::TEMPORARY_FILE_PATH
       end
 
