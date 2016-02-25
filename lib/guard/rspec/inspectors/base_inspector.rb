@@ -29,7 +29,7 @@ module Guard
           paths.uniq!
           paths.compact!
           spec_dirs = _select_only_spec_dirs(paths)
-          spec_files = _select_only_spec_files(paths)
+          spec_files = paths
           (spec_dirs + spec_files).uniq
         end
 
