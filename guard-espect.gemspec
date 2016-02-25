@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "guard/rspec/version"
 
 Gem::Specification.new do |s|
-  s.name        = "guard-rspec"
+  s.name        = "guard-espect"
   s.version     = Guard::EspectVersion::VERSION
   s.author      = "Thibaud Guillaume-Gentil"
   s.email       = "thibaud@thibaud.gg"
