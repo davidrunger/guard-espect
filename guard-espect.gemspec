@@ -5,7 +5,7 @@ require "guard/rspec/version"
 
 Gem::Specification.new do |s|
   s.name        = "guard-espect"
-  s.version     = Guard::EspectVersion::VERSION
+  s.version     = Guard::RSpecVersion::VERSION
   s.author      = "Thibaud Guillaume-Gentil"
   s.email       = "thibaud@thibaud.gg"
   s.summary     = "Guard gem for RSpec"
