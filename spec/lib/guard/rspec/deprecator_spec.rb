@@ -1,5 +1,5 @@
 require "guard/compat/test/helper"
-require "guard/rspec/deprecator"
+require "guard/espect/deprecator"
 
 RSpec.describe Guard::Espect::Deprecator do
   let(:options) { {} }

@@ -2,7 +2,7 @@ require "guard/compat/test/helper"
 
 require "lib/guard/rspec/inspectors/shared_examples"
 
-require "guard/rspec/inspectors/focused_inspector"
+require "guard/espect/inspectors/focused_inspector"
 
 klass = Guard::Espect::Inspectors::FocusedInspector
 

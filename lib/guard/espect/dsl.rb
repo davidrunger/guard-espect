@@ -1,6 +1,6 @@
 require "ostruct"
 
-require "guard/rspec"
+require "guard/espect"
 
 module Guard
   class Espect < Plugin

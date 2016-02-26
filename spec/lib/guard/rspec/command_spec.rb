@@ -1,7 +1,7 @@
 require "launchy"
 
 require "guard/compat/test/helper"
-require "guard/rspec/command"
+require "guard/espect/command"
 
 RSpec.describe Guard::Espect::Command do
   let(:options) { {} }

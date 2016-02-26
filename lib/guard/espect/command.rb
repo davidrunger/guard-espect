@@ -1,7 +1,7 @@
 require "rspec/core"
 require "pathname"
 
-require "guard/rspec"
+require "guard/espect"
 
 module Guard
   class Espect < Plugin

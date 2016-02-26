@@ -1,6 +1,6 @@
-require "guard/rspec/inspectors/simple_inspector.rb"
-require "guard/rspec/inspectors/keeping_inspector.rb"
-require "guard/rspec/inspectors/focused_inspector.rb"
+require "guard/espect/inspectors/simple_inspector.rb"
+require "guard/espect/inspectors/keeping_inspector.rb"
+require "guard/espect/inspectors/focused_inspector.rb"
 
 module Guard
   class Espect < Plugin

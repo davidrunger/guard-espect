@@ -1,4 +1,4 @@
-require "guard/rspec/command"
+require "guard/espect/command"
 
 module Guard
   class Espect < Plugin

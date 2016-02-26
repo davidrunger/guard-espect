@@ -1,6 +1,6 @@
 require "guard/compat/test/helper"
 
-require "guard/rspec/results"
+require "guard/espect/results"
 
 RSpec.describe Guard::Espect::Results do
   subject do

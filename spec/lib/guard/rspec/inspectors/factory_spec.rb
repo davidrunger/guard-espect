@@ -1,6 +1,6 @@
 require "guard/compat/test/helper"
 
-require "guard/rspec/inspectors/factory"
+require "guard/espect/inspectors/factory"
 
 RSpec.describe Guard::Espect::Inspectors::Factory do
   let(:factory) { Guard::Espect::Inspectors::Factory }

@@ -1,10 +1,10 @@
 require "guard/rspec_defaults"
 
-require "guard/rspec/inspectors/factory"
-require "guard/rspec/command"
-require "guard/rspec/notifier"
-require "guard/rspec/results"
-require "guard/rspec/rspec_process"
+require "guard/espect/inspectors/factory"
+require "guard/espect/command"
+require "guard/espect/notifier"
+require "guard/espect/results"
+require "guard/espect/rspec_process"
 
 module Guard
   class Espect < Plugin

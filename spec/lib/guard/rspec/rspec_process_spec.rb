@@ -1,6 +1,6 @@
 require "guard/compat/test/helper"
 
-require "guard/rspec/rspec_process"
+require "guard/espect/rspec_process"
 
 RSpec.describe Guard::Espect::RSpecProcess do
   before do

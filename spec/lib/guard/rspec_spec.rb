@@ -1,5 +1,5 @@
 require "guard/compat/test/helper"
-require "guard/rspec"
+require "guard/espect"
 
 RSpec.describe Guard::Espect do
   let(:default_options) { Guard::Espect::Options::DEFAULTS }

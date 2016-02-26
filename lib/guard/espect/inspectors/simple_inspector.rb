@@ -1,4 +1,4 @@
-require "guard/rspec/inspectors/base_inspector"
+require "guard/espect/inspectors/base_inspector"
 
 module Guard
   class Espect < Plugin

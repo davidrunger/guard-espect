@@ -1,6 +1,6 @@
 require "guard/compat/test/helper"
 
-require "guard/rspec/notifier"
+require "guard/espect/notifier"
 
 RSpec.describe Guard::Espect::Notifier do
   let(:options) { { notification: true, title: "RSpec results" } }

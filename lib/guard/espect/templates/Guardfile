@@ -8,7 +8,7 @@
 #  * 'just' rspec: 'rspec'
 
 guard :rspec, cmd: "bundle exec rspec" do
-  require "guard/rspec/dsl"
+  require "guard/espect/dsl"
   dsl = Guard::Espect::Dsl.new(self)
 
   # Feel free to open issues for suggestions and improvements

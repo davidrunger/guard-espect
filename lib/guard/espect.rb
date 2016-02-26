@@ -1,8 +1,8 @@
 require "guard/compat/plugin"
 
-require "guard/rspec/options"
-require "guard/rspec/deprecator"
-require "guard/rspec/runner"
+require "guard/espect/options"
+require "guard/espect/deprecator"
+require "guard/espect/runner"
 
 # NOTE: To avoid 'superclass mismatch for class RSpec' errors,
 # every file has to have

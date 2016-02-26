@@ -2,7 +2,7 @@ require "guard/compat/test/helper"
 
 require "lib/guard/rspec/inspectors/shared_examples"
 
-require "guard/rspec/inspectors/keeping_inspector"
+require "guard/espect/inspectors/keeping_inspector"
 
 klass = Guard::Espect::Inspectors::KeepingInspector
 
