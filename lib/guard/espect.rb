@@ -30,7 +30,7 @@ module Guard
     end
 
     def run_all
-      _throw_if_failed { runner.run_all }
+      _throw_if_failed { runner.run([::Guard::TARGET_SPEC_FILE]) }
     end
 
     def reload
