@@ -9,10 +9,9 @@ Gem::Specification.new do |s|
   s.author      = "Thibaud Guillaume-Gentil"
   s.email       = "thibaud@thibaud.gg"
   s.summary     = "Guard gem for RSpec"
-  s.description = "Guard::Espect automatically run your specs" +
-                  " (much like autotest)."
+  s.description = "Guard::Espect automatically run your specs."
 
-  s.homepage    = "https://github.com/guard/guard-rspec"
+  s.homepage    = "https://github.com/davidrunger/guard-espect"
   s.license     = "MIT"
 
   s.files        = `git ls-files`.split($INPUT_RECORD_SEPARATOR)

@@ -5,7 +5,7 @@ require "guard/espect/rspec_process"
 RSpec.describe Guard::Espect::RSpecProcess do
   before do
     allow(Kernel).to receive(:spawn) do |*args|
-      fail "Not stubbed: Kernel.spawn(#{args.map(&:inspect) * ','})"
+      raise "Not stubbed: Kernel.spawn(#{args.map(&:inspect) * ','})"
     end
   end
 
