@@ -3,13 +3,7 @@ require "guard/compat/test/helper"
 require "guard/espect/rspec_process"
 
 RSpec.describe Guard::Espect::RSpecProcess do
-  before do
-    allow(Kernel).to receive(:spawn) do |*args|
-      raise "Not stubbed: Kernel.spawn(#{args.map(&:inspect) * ','})"
-    end
-  end
-
-  let(:results) { instance_double(Guard::Espect::Results) }
+  let(:results) { instance_double(Guard::RSpec::Results) }
 
   let(:cmd) { "foo" }
   let(:file) { "/tmp/foobar.txt" }
