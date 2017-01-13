@@ -93,7 +93,7 @@ RSpec.describe Guard::Espect::Inspectors::BaseInspector do
           allow(Dir).to receive(:[]).with("spec/**{,/*/**}/*.feature").
             and_return([])
 
-          expect(subject).to eq(["spec/models/a_foo_spec.rb"])
+          expect(subject).to eq(["app/models/a_foo.rb", "spec/models/a_foo_spec.rb"])
         end
 
         context "chdir option present" do
@@ -123,7 +123,7 @@ RSpec.describe Guard::Espect::Inspectors::BaseInspector do
               with("moduleA/spec/**{,/*/**}/*.feature").
               and_return([])
 
-            expect(subject).to eq(["spec/models/a_foo_spec.rb"])
+            expect(subject).to eq(["moduleA/models/a_foo.rb", "spec/models/a_foo_spec.rb"])
           end
         end
       end

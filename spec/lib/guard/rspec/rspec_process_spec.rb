@@ -3,7 +3,7 @@ require "guard/compat/test/helper"
 require "guard/espect/rspec_process"
 
 RSpec.describe Guard::Espect::RSpecProcess do
-  let(:results) { instance_double(Guard::RSpec::Results) }
+  let(:results) { instance_double(Guard::Espect::Results) }
 
   let(:cmd) { "foo" }
   let(:file) { "/tmp/foobar.txt" }
@@ -97,7 +97,7 @@ RSpec.describe Guard::Espect::RSpecProcess do
           allow(Guard::Compat::UI).to receive(:error)
         end
         before do
-          allow(Guard::RSpec::Results).to receive(:new).
+          allow(Guard::Espect::Results).to receive(:new).
             with(file).and_raise(Errno::ENOENT, "foobar.txt")
         end
 

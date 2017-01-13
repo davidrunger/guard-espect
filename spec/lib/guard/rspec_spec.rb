@@ -51,13 +51,15 @@ RSpec.describe Guard::Espect do
   end
 
   describe "#run_all" do
+    Guard::TARGET_SPEC_FILE ||= '/some/cool/file'
+
     it "runs all specs via runner" do
-      expect(runner).to receive(:run_all) { true }
+      expect(runner).to receive(:run) { true }
       plugin.run_all
     end
 
     it "throws task_has_failed if runner return false" do
-      allow(runner).to receive(:run_all) { false }
+      allow(runner).to receive(:run) { false }
       expect(plugin).to receive(:throw).with(:task_has_failed)
       plugin.run_all
     end

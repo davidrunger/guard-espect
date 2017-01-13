@@ -69,7 +69,7 @@ RSpec.shared_examples "inspector" do |klass|
       allow(Dir).to receive(:[]).with("spec/**{,/*/**}/*[_.]spec.rb").
         and_return([])
 
-      expect(inspector.paths(paths)).to eq([])
+      expect(inspector.paths(paths)).to eq(["not_a_spec_path.rb", "spec/not_exist_spec.rb"])
     end
 
     it "uniq and compact paths" do
@@ -103,7 +103,7 @@ RSpec.shared_examples "inspector" do |klass|
         and_return([])
 
       paths = %w(myspec lib/guard not_exist_dir)
-      expect(inspector.paths(paths)).to match_array(paths - ["not_exist_dir"])
+      expect(inspector.paths(paths)).to match_array(paths)
     end
   end
 

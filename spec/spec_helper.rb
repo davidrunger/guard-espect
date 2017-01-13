@@ -1,4 +1,5 @@
 require "rspec"
+require 'bundler'
 
 # To help produce better bug reports in Rubinius
 if RUBY_ENGINE == "rbx"
@@ -127,12 +128,6 @@ RSpec.configure do |config|
     %w(delete readlines).each do |meth|
       allow(File).to receive(meth.to_sym) do |*args|
         abort "stub me: File.#{meth}(#{args.map(&:inspect) * ','})!"
-      end
-    end
-
-    %w(mkdir mkdir_p).each do |meth|
-      allow(FileUtils).to receive(meth.to_sym) do |*args|
-        abort "stub me: FileUtils.#{meth}(#{args.map(&:inspect) * ','})!"
       end
     end
 
